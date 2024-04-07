@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donuts</title>
+    {{ 'reset.css' | asset_url | stylesheet_tag }}
+    {{ 'variables.css' | asset_url | stylesheet_tag }}
+
+    {{ content_for_header }}
+    {% if request.status == 404 %}
+      {% section '404' %}
+    {% endif %}
+
+  </head>
+  <body>
+
+    {% comment %} {% render 'header' %} {% endcomment %}
+    {{ content_for_layout }}
+  </body>
+</html>

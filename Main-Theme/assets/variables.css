@@ -1,0 +1,73 @@
+.containerMaxWidth {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.containerWrapper {
+	width: 100%;
+	max-width: 1300px;
+	padding: 0px 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+:root {
+	/* Fonts */
+	--body-font: 'Urbanist', -apple-system, system-ui, sans-serif;
+	/* Colors */
+	--color-white: #ffffff;
+	--color-primary: #655d5d;
+	--color-primary-hover: #f3f6f9;
+	--color-grey: rgba(178, 174, 174, 1);
+	--color-secondary: #ff7297;
+	--color-secondary-hover: #ff8aa9;
+	/* End Dark Projects styles */
+	/* Fonts */
+	--fonts-big: 96px;
+	--fonts-h1: 72px;
+	--fonts-h2: 36px;
+	--fonts-h3: 28px;
+	--fonts-h4: 24px;
+	--fonts-h5: 18px;
+	/* Wrapper */
+	--wrapper_width: 1440px;
+}
+@media screen and (max-width: 1280px) {
+	:root {
+		--fonts-big: 64px;
+		--fonts-h1: 52px;
+		--fonts-h2: 28px;
+		--fonts-h3: 24px;
+		--fonts-h4: 20px;
+		--fonts-h5: 16px;
+	}
+}
+@media screen and (max-width: 950px) {
+	:root {
+		--fonts-h1: 40px;
+		--fonts-h2: 26px;
+		--fonts-h3: 28px;
+		--fonts-h4: 18px;
+		--fonts-h5: 16px;
+	}
+}
+@media screen and (max-width: 400px) {
+	:root {
+		--fonts-big: 40px;
+		--fonts-h1: 36px;
+		--fonts-h2: 24px;
+		--fonts-h3: 20px;
+		--fonts-h4: 16px;
+		--fonts-h5: 14px;
+	}
+}
+@media screen and (max-width: 1440px) {
+	:root {
+		--wrapper_width: 1180px;
+	}
+}

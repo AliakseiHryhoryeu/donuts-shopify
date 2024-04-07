@@ -1,0 +1,25 @@
+{{ 'page404.css' | asset_url | stylesheet_tag }}
+
+<div class='page404'>
+  <div class='page404__header'>
+    <a href='/'>{{ shop.name }}</a>
+  </div>
+  <div class='page404__title'>{{ template.404.subtext }}</div>
+  <div class='page404__subtitle' }>
+    <div class='page404__subtitle_main' }>Oops!</div>
+    <div class='page404__subtitle_secondary' }>
+      {{ template.404.title }}
+    </div>
+  </div>
+  <div class='page404__wrapper' }>
+    <a href="{{ routes.root_url }} "class='page404__button'}>
+      Home
+    </a>
+    <a
+      href='{{routes.root_url}}'
+      class='page404__button'
+      }>
+      Contact us
+    </a>
+  </div>
+</div>

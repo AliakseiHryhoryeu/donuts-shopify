@@ -1,0 +1,53 @@
+:root {
+	/* Fonts */
+	--body-font: 'Urbanist', -apple-system, system-ui, sans-serif;
+
+	/* Colors */
+	--color-white: #ffffff;
+	--color-primary: #655d5d;
+	--color-primary-hover: #f3f6f9;
+	--color-grey: rgba(178, 174, 174, 1);
+	--color-secondary: #ff7297;
+	--color-secondary-hover: #ff8aa9;
+	/* End Dark Projects styles */
+
+	/* Fonts */ // for 1440px
+	--fonts-big: 96px; // Hrizontal Spacers
+	--fonts-h1: 72px; // small titles
+	--fonts-h2: 36px; // Big text
+	--fonts-h3: 28px; // normal text
+	--fonts-h4: 24px; // Big description
+	--fonts-h5: 18px; // description
+
+	@media screen and (max-width: 1280px) {
+		--fonts-big: 64px; // Hrizontal Spacers
+		--fonts-h1: 52px; // small titles
+		--fonts-h2: 28px; // Big text
+		--fonts-h3: 24px; // normal text
+		--fonts-h4: 20px; // Big description
+		--fonts-h5: 16px; // description
+	}
+	@media screen and (max-width: 950px) {
+		// --fonts-big: 96px; // Hrizontal Spacers
+		--fonts-h1: 40px; // small titles
+		--fonts-h2: 26px; // Big text
+		--fonts-h3: 28px; // normal text
+		--fonts-h4: 18px; // Big description
+		--fonts-h5: 16px; // description
+	}
+
+	@media screen and (max-width: 400px) {
+		--fonts-big: 40px; // Hrizontal Spacers
+		--fonts-h1: 36px; // small titles
+		--fonts-h2: 24px; // Big text
+		--fonts-h3: 20px; // normal text
+		--fonts-h4: 16px; // Big description
+		--fonts-h5: 14px; // description
+	}
+
+	/* Wrapper */
+	--wrapper_width: 1440px;
+	@media screen and (max-width: 1440px) {
+		--wrapper_width: 1180px;
+	}
+}
