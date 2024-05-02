@@ -1,0 +1,32 @@
+<div class="products__wrapper containerWrapper">
+  <div class="product__container">
+    <div class="product__description__container">
+      <img src="{{product.featured_image| img_url: width:auto}}" alt="product-img" width="auto" height="auto">
+      <div class="product__description__wrapper">
+        <div class="product__title">{{ product.title }}</div>
+        <div class="product__price">
+          {{ product.price | money }}
+        </div>
+        <div class="product__text">
+          {{ product.description }}
+        </div>
+      </div>
+    </div>
+    <div class="product__row">
+      <div class="product__counter">
+        <div class="counter-minus-btn">
+          {% render 'icon-minus' %}
+        </div>
+
+        <p id="count-{{product.id}}">1</p>
+
+        <div class="counter-plus-btn">
+          {% render 'icon-plus' %}
+        </div>
+      </div>
+      <div class="product__row_btn">
+        <span> Add to bag</span>
+      </div>
+    </div>
+  </div>
+</div>

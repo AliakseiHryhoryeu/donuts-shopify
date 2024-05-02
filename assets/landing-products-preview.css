@@ -1,0 +1,106 @@
+.products__wrapper {
+	margin-top: 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 50px;
+	column-gap: 40px;
+	justify-items: center;
+}
+@media (max-width: 1200px) {
+	.products__wrapper {
+		row-gap: 50px;
+		column-gap: 40px;
+	}
+}
+@media (max-width: 800px) {
+	.products__wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media (max-width: 550px) {
+	.products__wrapper {
+		grid-template-columns: 1fr;
+		row-gap: 10px;
+	}
+}
+
+.catalog__title {
+	justify-self: flex-start;
+	align-self: flex-start;
+	white-space: nowrap;
+	padding-right: 100px;
+	font-weight: 900;
+	font-size: 96px;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: 3px var(--color-secondary);
+}
+.catalog__container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.catalog__products__wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.catalog__filters__container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+}
+
+.catalogPreview__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.catalogPreview__wrapper {
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 50px;
+	column-gap: 40px;
+	justify-items: center;
+}
+.catalogPreview__button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	font-size: 24px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 40px;
+	text-align: center;
+	padding: 20px;
+}
+.catalogPreview__button p {
+	margin-right: 9px;
+}
+.catalogPreview__button:hover {
+	background-color: var(--color-primary-hover);
+	border-radius: 10px;
+}
+@media (max-width: 1200px) {
+	.catalogPreview__wrapper {
+		row-gap: 50px;
+		column-gap: 40px;
+	}
+}
+@media (max-width: 800px) {
+	.catalogPreview__wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media (max-width: 550px) {
+	.catalogPreview__wrapper {
+		grid-template-columns: 1fr;
+		row-gap: 10px;
+	}
+}

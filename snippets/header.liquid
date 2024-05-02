@@ -1,0 +1,58 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+<header>
+  <div class="header__container containerMaxWidth">
+    <div class="header__wrapper containerWrapper">
+      <div class="header__logo__container">
+
+        {% render 'header-logo' %}
+
+        <div class="header__nav__NotActiveHeaderBurger">
+          <nav class="header__nav__container">
+            <div class="header__nav__item">
+              {% comment %}
+              onClick={()=> {
+              allActions.closeHeaderPopup()
+              router.push('/')
+              }}
+              {% endcomment %}
+
+              About us
+            </div>
+            <div class="header__nav__item__active">
+              {% comment %}
+              onClick={()=> {
+              allActions.closeHeaderPopup()
+              router.push('/catalog')
+              }}
+              {% endcomment %}
+              Catalog
+            </div>
+            <div class="header__nav__item">
+              {% comment %}
+              onClick={()=> {
+              allActions.closeHeaderPopup()
+              router.push('/bag')
+              }}
+              {% endcomment %}
+              Bag
+              <div class="header__nav__bag__counter">3</div>
+            </div>
+            <div class="header__nav__item">
+              {% comment %}onClick={()=> { allActions.closeHeaderPopup() router.push('/contacts') }} {% endcomment %}
+              Contacts
+            </div>
+          </nav>
+        </div>
+        <div class="header__logo__close">
+          <img
+            src="{{'crossIcon.svg' | asset_url }}"
+            width="16"
+            height="16"
+            alt="crossIcon">
+        </div>
+        <div class="header__nav__ActiveHeaderBurger"></div>
+      </div>
+    </div>
+  </div>
+</header>

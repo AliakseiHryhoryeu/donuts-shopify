@@ -1,0 +1,16 @@
+<div class="header__logo" id='header__logo'>
+  <img
+    src="{{ 'donut.svg' |asset_url  }}"
+    width="37"
+    height="37"
+    alt="headerlogo"
+    class="">
+  <span>{{ shop.name }}</span>
+</div>
+
+{% comment %} Navigete to '/' {% endcomment %}
+<script>
+  document.getElementById('header__logo').addEventListener('click', function() {
+    window.location.href = '/';
+  });
+</script>

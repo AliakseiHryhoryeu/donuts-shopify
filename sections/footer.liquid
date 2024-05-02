@@ -1,0 +1,126 @@
+<section class="containerMaxWidth">
+  {% render 'divider' with text: 'questions' %}
+</section>
+
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+<section class="footer__container containerMaxWidth">
+  <div class="footer__wrapper containerWrapper">
+    <div class="footer__wrapperMedia770">
+      <div class="footer__contacts">
+        <div class="footer__title">Contacts</div>
+        <div class="footer__contacts_wrapper" footer__text}`}>
+          <p>
+            Phone number: <br>
+            +1 (123)123-45-67
+          </p>
+          <p>Email: donuts@gmail.com</p>
+          <p>Address: 324 Main St Carbondale, Pennsylvania(PA), 18407</p>
+        </div>
+      </div>
+      <div class="footer__menu__container">
+        <div class="footer__menu_wrapper">
+          <div class="footer__title">Menu</div>
+          <p id="footer-linktoMain" class="footer__text">
+            {% comment %}
+              className={`${styles.footer__text} ${
+              pathname === '/'
+              ? styles.footer__text__active
+              : styles.footer__text__hover
+              }`}
+            {% endcomment %}
+            About us
+            <script>
+              document.getElementById('footer-linktoMain').addEventListener('click', function () {
+                window.location.href = '/';
+              });
+            </script>
+          </p>
+
+          <p class="footer__text" id="linktoMain">
+            {% comment %}
+              className={`${styles.footer__text} ${
+              pathname === '/catalog'
+              ? styles.footer__text__active
+              : styles.footer__text__hover
+              }`}
+            {% endcomment %}
+            Catalog
+            <script>
+              document.getElementById('footer-linktoMain').addEventListener('click', function () {
+                window.location.href = '/catalog';
+              });
+            </script>
+          </p>
+
+          <p class="footer__text" id="footer-linktoCart">
+            {% comment %}
+              className={`${styles.footer__text} ${
+              pathname === '/cart'
+              ? styles.footer__text__active
+              : styles.footer__text__hover
+              }`}
+            {% endcomment %}
+            Your cart
+            <script>
+              document.getElementById('footer-linktoCart').addEventListener('click', function () {
+                window.location.href = '/cart';
+              });
+            </script>
+          </p>
+
+          <p class="footer__text">
+            {% comment %}
+              onClick={() => {
+              router.push('/contacts')
+              }}
+              className={`${styles.footer__text} ${
+              pathname === '/contacts'
+              ? styles.footer__text__active
+              : styles.footer__text__hover
+              }`}
+            {% endcomment %}
+            Contacts
+          </p>
+        </div>
+        <div class="footer__socials footer__socials__moblieOnly">
+          <div class="footer__title">We are in social media</div>
+          <div class="footer__socials_wrapperSvg">
+            <a href="https://www.instagram.com/">
+              {% render 'icon-instagram' %}
+            </a>
+            <a href="https://telegram.org/">
+              {% render 'icon-telegram' %}
+            </a>
+            <a href="https://www.whatsapp.com/">
+              {% render 'icon-whatsapp' %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__partners__container">
+      <div class="footer__socials footer__socials__pcOnly">
+        <div class="footer__title">We are in social media</div>
+        <div class="footer__socials_wrapperSvg">
+          <a href="https://www.instagram.com/">
+            {% render 'icon-instagram' %}
+          </a>
+          <a href="https://telegram.org/">
+            {% render 'icon-telegram' %}
+          </a>
+          <a href="https://www.whatsapp.com/">
+            {% render 'icon-whatsapp' %}
+          </a>
+        </div>
+      </div>
+      <div class="footer__partners">
+        <div class="footer__title">Partners</div>
+        <p class="footer__text footer__text__hover">
+          Become a sponsor in one click on the program &quot;We are donuts&quot;
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

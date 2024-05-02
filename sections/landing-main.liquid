@@ -1,0 +1,50 @@
+{{ 'landing-main.css' | asset_url | stylesheet_tag }}
+
+<section class='preview__container containerMaxWidth'>
+  <img
+    src={{'landing-main-preview-bg-top.svg' | asset_url}}
+    class='preview__bg__top'
+    width='auto'
+    height='auto'
+    alt='' />
+  <img
+    src={{'landing-main-preview-bg-bottom.svg' | asset_url}}
+    class='preview__bg__bottom'
+    width='auto'
+    height='auto'
+    alt='' />
+  <div class='preview__wrapper containerWrapper'>
+    <div class='preview__content'>
+      <div class='preview__title'>
+        Find your <br/>
+        favorite
+        <span>donut</span>!
+      </div>
+      <div class='preview__subtitle'>
+        Our bakery offers various <br/>
+        options of donuts
+      </div>
+      <div class='preview__button' id='preview__button'>
+
+        {% comment %} Navigete to '/collection' {% endcomment %}
+        <script>
+          document.getElementById('preview__button').addEventListener('click', function() {
+            window.location.href = '/collection';
+          });
+        </script>
+
+        CHOOSE DONUTS
+      </div>
+    </div>
+  </div>
+</section>
+<div class='containerMaxWidth'>
+  <div class='arrange__wrapper containerWrapper'>
+    <p>
+      Arrange a
+      <span>sweet life</span>
+      <br/>
+      for yourself
+    </p>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+.team__container {
+	position: relative;
+	width: 100%;
+}
+.team__bg_top {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.team__bg_bottom {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.team__wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 150px;
+	padding-top: 110px;
+	width: 100%;
+}
+.team__text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	max-width: 600px;
+	width: 100%;
+}
+.team__text p {
+	margin: 10px 0px;
+	font-weight: normal;
+	font-size: var(--fonts-h4);
+	color: var(--color-primary);
+}
+.team__button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	font-size: var(--fonts-h4);
+	color: var(--color-primary);
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 10px;
+	padding: 10px;
+	padding-left: 0;
+}
+.team__button::after {
+	margin-left: 10px;
+	font-size: 0px;
+	content: '';
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+	padding: 4px;
+	border: 8px solid var(--color-primary);
+	background-color: var(--color-white);
+}
+.team__button:hover {
+	background-color: var(--color-primary-hover);
+}
+.team__title {
+	font-weight: 500;
+	font-size: var(--fonts-h2);
+	color: var(--color-primary);
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+.team__photos__pc {
+	width: 600px;
+}
+.team__photos__mobile {
+	display: none;
+}
+@media screen and (max-width: 1600px) {
+	.team__bg_top {
+		height: 90px;
+	}
+}
+@media screen and (max-width: 1400px) {
+	.team__text {
+		max-width: 520px;
+	}
+	.team__photos__pc {
+		width: 600px;
+	}
+	.team__bg_top {
+		height: 80px;
+		left: -20px;
+	}
+	.team__bg_bottom {
+		max-height: 140px;
+	}
+}
+@media screen and (max-width: 1250px) {
+	.team__text {
+		max-width: 480px;
+	}
+	.team__photos__pc {
+		width: 520px;
+	}
+}
+@media screen and (max-width: 1050px) {
+	.team__text {
+		max-width: 420px;
+	}
+	.team__photos__pc {
+		width: 440px;
+	}
+	.team__bg_bottom {
+		max-height: 100px;
+	}
+}
+@media screen and (max-width: 950px) {
+	.team__wrapper {
+		display: flex;
+		flex-direction: column;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.team__text {
+		max-width: 90%;
+	}
+	.team__photos__pc {
+		width: 500px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.team__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	.team__photos__pc {
+		display: none;
+	}
+	.team__photos__mobile {
+		display: block;
+	}
+}

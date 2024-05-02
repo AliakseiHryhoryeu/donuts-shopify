@@ -1,0 +1,22 @@
+{{ 'landing-products-preview.css' | asset_url | stylesheet_tag }}
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-counter.js' | asset_url }}" defer="defer"></script>
+
+<div class="catalogPreview__container containerMaxWidth">
+  <div class="products__wrapper containerWrapper">
+    {% for product in collections.donuts.products limit: 6 %}
+      {% render 'product-preview', product: product %}
+    {% endfor %}
+  </div>
+
+  <div class="catalogPreview__button" id="catalogPreview__button">
+    <p>all products</p>
+    {% render 'icon-circle' %}
+  </div>
+</div>
+
+<script>
+  document.getElementById('catalogPreview__button').addEventListener('click', function () {
+    window.location.href = '/collection';
+  });
+</script>

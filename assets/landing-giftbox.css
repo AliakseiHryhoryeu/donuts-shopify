@@ -1,0 +1,110 @@
+.giftboxPreview__container {
+	margin-top: 150px;
+	background-image: url('landing-giftbox-bgLarge.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+.giftboxPreview__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 1);
+	padding: 50px;
+	width: auto;
+	margin: 50px 0px;
+}
+.giftboxPreview__leftSection {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	height: 100%;
+	margin-right: 5px;
+}
+.giftboxPreview__rightSection img {
+	height: 300px;
+	width: 350px;
+}
+.giftboxPreview__title {
+	font-weight: 700;
+	font-size: var(--fonts-h2);
+	text-transform: uppercase;
+	color: var(--color-secondary);
+	margin-bottom: 35px;
+}
+.giftboxPreview__description {
+	max-width: 400px;
+	font-weight: 400;
+	margin-bottom: 50px;
+	font-size: var(--fonts-h4);
+	color: var(--color-primary);
+}
+.giftboxPreview__button {
+	padding: 13px 30px;
+	border-radius: 20px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: var(--fonts-h4);
+	border: 1px solid #fff;
+	background-color: var(--color-secondary);
+	box-shadow: 4px 4px 10px rgba(125, 116, 160, 0.35);
+}
+.giftboxPreview__button:hover {
+	background: var(--color-white);
+	border: 1px solid var(--color-secondary);
+	color: var(--color-primary);
+}
+@media screen and (max-width: 1200px) {
+	.giftboxPreview__wrapper {
+		margin: 30px 0px;
+	}
+	.giftboxPreview__wrapper img {
+		max-width: 300px;
+		height: 260px;
+	}
+	.giftboxPreview__rightSection img {
+		height: 300px;
+		width: 350px;
+	}
+	.giftboxPreview__title {
+		margin-bottom: 25px;
+	}
+	.giftboxPreview__description {
+		margin-bottom: 40px;
+	}
+}
+@media screen and (max-width: 900px) {
+	.giftboxPreview__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	.giftboxPreview__rightSection {
+		margin-top: 30px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.giftboxPreview__wrapper {
+		padding: 40px;
+	}
+	.giftboxPreview__description {
+		max-width: 270px;
+	}
+	.giftboxPreview__rightSection img {
+		height: 200px;
+		width: 300px;
+	}
+}
+@media screen and (max-width: 450px) {
+	.giftboxPreview__wrapper {
+		padding: 30px;
+	}
+	.giftboxPreview__rightSection img {
+		height: 170px;
+		width: 270px;
+	}
+}
