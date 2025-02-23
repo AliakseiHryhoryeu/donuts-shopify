@@ -1,19 +1,93 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donuts</title>
-    {{ 'reset.css' | asset_url | stylesheet_tag }}
-    {{ 'variables.css' | asset_url | stylesheet_tag }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    {% comment %}SEO Meta Tags{% endcomment %}
+    <title>
+      {{ page_title | escape }}
+      {% if current_tags %} – tagged "{{ current_tags | join: ', ' }}"{% endif %}
+      {% if current_page != 1 %} – Page {{ current_page }}{% endif %}
+      {% unless page_title contains shop.name %} – {{ shop.name }}{% endunless %}
+    </title>
+    <meta name="description" content="{{ page_description | escape }}">
+    {% if page_image %}
+      <meta property="og:image" content="{{ page_image | image_url: 'master' }}">
+    {% endif %}
+
+    {% comment %}Favicon{% endcomment %}
+    <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
+    <link rel="apple-touch-icon" href="{{ 'apple-touch-icon.png' | asset_url }}">
+
+    {% comment %}Critical CSS{% endcomment %}
+    {{ 'reset.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'variables.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+
+    {% comment %}Shopify-specific head content{% endcomment %}
     {{ content_for_header }}
 
+    {% comment %}JSON-LD for SEO{% endcomment %}
+    {% if template contains 'product' %}
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Product",
+          "name": {{ product.title | json }},
+          "url": {{ shop.url | append: product.url | json }},
+          {% if product.featured_image %}
+            "image": {{ product.featured_image | image_url: 'large' | json }},
+          {% endif %}
+          "description": {{ product.description | strip_html | json }},
+          "brand": {
+            "@type": "Brand",
+            "name": {{ product.vendor | json }}
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": {{ cart.currency.iso_code | json }},
+            "price": {{ product.price | divided_by: 100.00 | json }},
+            "availability": "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}"
+          }
+        }
+      </script>
+    {% endif %}
   </head>
-  <body>
-    {% comment %} {% section 'header' %} {% endcomment %}
-    {{ content_for_layout }}
+  <body class="template-{{ template | handle }}{% if settings.enable_rtl %} rtl{% endif %}">
+    {% comment %}Skip to main content link for accessibility{% endcomment %}
+    <a href="#MainContent" class="skip-to-content-link visually-hidden">
+      {{ 'general.accessibility.skip_to_text' | t }}
+    </a>
 
+    {% comment %}Header section{% endcomment %}
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    {% comment %}Main content{% endcomment %}
+    <main role="main" id="MainContent">
+      {{ content_for_layout }}
+    </main>
+
+    {% comment %}Footer section{% endcomment %}
     {% section 'footer' %}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+
+    {% comment %}Debug mode{% endcomment %}
+    {% if settings.debug_mode %}
+      <script>
+        console.log('Debug mode enabled');
+        window.shopifyTheme = {
+          debug: true,
+          template: {{ template | json }},
+          routes: {
+            root_url: {{ routes.root_url | json }},
+            cart_url: {{ routes.cart_url | json }}
+          }
+        };
+      </script>
+    {% endif %}
   </body>
 </html>

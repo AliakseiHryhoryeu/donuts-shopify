@@ -2,11 +2,13 @@
 	position: absolute;
 	right: 100px;
 	top: 0;
+	z-index: 1;
 }
 .preview__bg__bottom {
 	position: absolute;
 	right: 0;
 	bottom: 0;
+	z-index: 1;
 }
 .preview__container {
 	position: relative;
@@ -21,13 +23,6 @@
 	align-items: center;
 	justify-content: center;
 }
-.preview__content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	height: 100%;
-}
 .preview__wrapper {
 	display: flex;
 	flex-direction: row;
@@ -36,12 +31,21 @@
 	height: 100%;
 	width: 100%;
 }
+.preview__content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
 .preview__title {
 	font-weight: 900;
 	font-size: var(--fonts-h1);
 	text-transform: uppercase;
 	text-align: center;
 	color: var(--color-primary);
+	line-height: 1.2;
+	margin: 0;
 }
 .preview__title span {
 	color: var(--color-secondary);
@@ -56,23 +60,24 @@
 	color: var(--color-primary);
 }
 .preview__button {
-	display: block;
+	display: inline-block;
 	padding: 21px 50px;
 	text-transform: uppercase;
+	text-decoration: none;
 	cursor: pointer;
 	text-align: center;
 	border-radius: 25px;
 	color: var(--color-white);
-	background-color: var(--color-secondary);
+	background-color: #ff69b4;
 	border: 1px solid var(--color-white);
 	font-size: var(--fonts-h4);
 	font-weight: 600;
-	z-index: 1;
+	transition: all 0.3s ease;
 }
 .preview__button:hover {
-	background: var(--color-white);
-	border: 1px solid var(--color-secondary);
-	color: var(--color-primary);
+	background-color: var(--color-white);
+	color: #ff69b4;
+	border: 1px solid #ff69b4;
 }
 .arrange__wrapper {
 	display: flex;
@@ -81,16 +86,17 @@
 	justify-content: center;
 	text-transform: uppercase;
 	padding: 150px 0px;
-	font-size: var(--fonts-h1);
 	text-align: center;
 }
-.arrange__wrapper p {
-	color: var(--color-primary);
+.arrange__wrapper h2 {
+	font-size: var(--fonts-h1);
 	font-weight: 700;
+	color: var(--color-primary);
+	margin: 0;
+	line-height: 1.2;
 }
 .arrange__wrapper span {
 	color: var(--color-secondary);
-	font-weight: 700;
 }
 @media screen and (max-width: 1600px) {
 	.preview__bg__top {
@@ -125,8 +131,7 @@
 @media screen and (max-width: 800px) {
 	.preview__container {
 		background-image: url('landing-main-bgSmall.jpg');
-		align-items: flex-start;
-		justify-content: center;
+		align-items: center;
 	}
 	.preview__wrapper {
 		align-items: center;
@@ -159,5 +164,31 @@
 	}
 	.preview__button {
 		padding: 17px 25px;
+	}
+	.preview__title {
+		font-size: 2rem;
+	}
+	.preview__subtitle {
+		font-size: 1.25rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	.preview__title {
+		font-size: 2.5rem;
+	}
+	.preview__subtitle {
+		font-size: 1.25rem;
+	}
+	.arrange__wrapper h2 {
+		font-size: 2rem;
+	}
+}
+@media screen and (max-width: 480px) {
+	.preview__title {
+		font-size: 2rem;
+	}
+	.preview__button {
+		padding: 0.875rem 2rem;
+		font-size: 1rem;
 	}
 }

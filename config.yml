@@ -1,4 +1,35 @@
+# Shopify Theme Configuration
+# Use environment variables for sensitive data
+
 development:
-  password: shptka_36efb2f45dc88480133009dc9c598a69
-  theme_id: "142016217333"
-  store: aliaksei1.myshopify.com
+  password: ${SHOPIFY_PASSWORD}
+  theme_id: ${SHOPIFY_THEME_ID}
+  store: ${SHOPIFY_STORE_URL}
+  timeout: 60s
+  ignore_files:
+    - '*.git/*'
+    - '*.DS_Store'
+    - '*.env'
+    - 'node_modules/*'
+
+staging:
+  password: ${SHOPIFY_STAGING_PASSWORD}
+  theme_id: ${SHOPIFY_STAGING_THEME_ID}
+  store: ${SHOPIFY_STORE_URL}
+  timeout: 60s
+  ignore_files:
+    - '*.git/*'
+    - '*.DS_Store'
+    - '*.env'
+    - 'node_modules/*'
+
+production:
+  password: ${SHOPIFY_PRODUCTION_PASSWORD}
+  theme_id: ${SHOPIFY_PRODUCTION_THEME_ID}
+  store: ${SHOPIFY_STORE_URL}
+  timeout: 60s
+  ignore_files:
+    - '*.git/*'
+    - '*.DS_Store'
+    - '*.env'
+    - 'node_modules/*'
