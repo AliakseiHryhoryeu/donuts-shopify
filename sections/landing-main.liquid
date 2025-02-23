@@ -1,50 +1,141 @@
 {{ 'landing-main.css' | asset_url | stylesheet_tag }}
 
-<section class='preview__container containerMaxWidth'>
+<section class="preview__container">
   <img
-    src={{'landing-main-preview-bg-top.svg' | asset_url}}
-    class='preview__bg__top'
-    width='auto'
-    height='auto'
-    alt='' />
+    src="{{ 'landing-main-preview-bg-top.svg' | asset_url }}"
+    class="preview__bg__top"
+    width="auto"
+    height="auto"
+    alt=""
+    loading="lazy"
+  >
   <img
-    src={{'landing-main-preview-bg-bottom.svg' | asset_url}}
-    class='preview__bg__bottom'
-    width='auto'
-    height='auto'
-    alt='' />
-  <div class='preview__wrapper containerWrapper'>
-    <div class='preview__content'>
-      <div class='preview__title'>
-        Find your <br/>
-        favorite
-        <span>donut</span>!
-      </div>
-      <div class='preview__subtitle'>
-        Our bakery offers various <br/>
-        options of donuts
-      </div>
-      <div class='preview__button' id='preview__button'>
+    src="{{ 'landing-main-preview-bg-bottom.svg' | asset_url }}"
+    class="preview__bg__bottom"
+    width="auto"
+    height="auto"
+    alt=""
+    loading="lazy"
+  >
 
-        {% comment %} Navigete to '/collection' {% endcomment %}
-        <script>
-          document.getElementById('preview__button').addEventListener('click', function() {
-            window.location.href = '/collection';
-          });
-        </script>
-
-        CHOOSE DONUTS
+  <div class="preview__wrapper containerWrapper containerMaxWidth">
+    <div class="preview__content">
+      <h1 class="preview__title">
+        {{ section.settings.title_line1 -}}
+        <br>
+        {{ section.settings.title_line2 }}
+        <span>{{ section.settings.title_accent }}</span>{{ section.settings.title_punctuation }}
+      </h1>
+      <div class="preview__subtitle">
+        {{ section.settings.subtitle | newline_to_br }}
       </div>
+      <a href="{{ section.settings.button_link }}" class="preview__button">{{ section.settings.button_text }}</a>
     </div>
   </div>
 </section>
-<div class='containerMaxWidth'>
-  <div class='arrange__wrapper containerWrapper'>
-    <p>
-      Arrange a
-      <span>sweet life</span>
-      <br/>
-      for yourself
-    </p>
+
+<div class="containerMaxWidth">
+  <div class="arrange__wrapper containerWrapper">
+    <h2>
+      {{ section.settings.bottom_title_line1 -}}
+      <span>{{ section.settings.bottom_title_accent }}</span>
+      <br class="desktop-break">
+      {{ section.settings.bottom_title_line2 }}
+    </h2>
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "Main Landing",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title_line1",
+      "label": "Title Line 1",
+      "default": "FIND YOUR"
+    },
+    {
+      "type": "text",
+      "id": "title_line2",
+      "label": "Title Line 2",
+      "default": "FAVORITE"
+    },
+    {
+      "type": "text",
+      "id": "title_accent",
+      "label": "Title Accent Word",
+      "default": "DONUT"
+    },
+    {
+      "type": "text",
+      "id": "title_punctuation",
+      "label": "Title Punctuation",
+      "default": "!"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Our bakery offers various\noptions of donuts"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "CHOOSE DONUTS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Content"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_line1",
+      "label": "Bottom Title Line 1",
+      "default": "ARRANGE A"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_accent",
+      "label": "Bottom Title Accent",
+      "default": "SWEET LIFE"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_line2",
+      "label": "Bottom Title Line 2",
+      "default": "FOR YOURSELF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Landing",
+      "settings": {
+        "title_line1": "FIND YOUR",
+        "title_line2": "FAVORITE",
+        "title_accent": "DONUT",
+        "title_punctuation": "!",
+        "subtitle": "Our bakery offers various\noptions of donuts",
+        "button_text": "CHOOSE DONUTS",
+        "button_link": "/collections/all",
+        "bottom_title_line1": "ARRANGE A",
+        "bottom_title_accent": "SWEET LIFE",
+        "bottom_title_line2": "FOR YOURSELF"
+      }
+    }
+  ]
+}
+{% endschema %}

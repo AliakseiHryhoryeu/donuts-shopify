@@ -1,9 +1,8 @@
 {{ 'divider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'divider.js' | asset_url }}" defer></script>
 
-<section class='divider'>
-  <p>{{ text }}</p>
-  <p>{{ text }}</p>
-  <p>{{ text }}</p>
-  <p>{{ text }}</p>
-  <p>{{ text }}</p>
+<section class="divider">
+  <div class="divider__content">
+    <p>{{ text }}</p>
+  </div>
 </section>

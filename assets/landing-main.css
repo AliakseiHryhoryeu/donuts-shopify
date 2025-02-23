@@ -2,11 +2,13 @@
 	position: absolute;
 	right: 100px;
 	top: 0;
+	z-index: 1;
 }
 .preview__bg__bottom {
 	position: absolute;
 	right: 0;
 	bottom: 0;
+	z-index: 1;
 }
 .preview__container {
 	position: relative;
@@ -20,15 +22,10 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-}
-.preview__content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	height: 100%;
+	width: 100%;
 }
 .preview__wrapper {
+	margin-right: 135px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -36,43 +33,49 @@
 	height: 100%;
 	width: 100%;
 }
-.preview__title {
-	font-weight: 900;
-	font-size: var(--fonts-h1);
-	text-transform: uppercase;
+.preview__content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	text-align: center;
-	color: var(--color-primary);
+}
+.preview__title {
+	font-family: var(--body-font);
+	font-size: 52px;
+	font-weight: 900;
+	color: var(--color-text);
 }
 .preview__title span {
-	color: var(--color-secondary);
+	color: var(--color-pink);
 }
 .preview__subtitle {
-	font-size: var(--fonts-h2);
+	font-family: var(--body-font);
+	font-size: 28px;
 	font-weight: 500;
-	text-align: center;
-	padding-top: 20px;
-	padding-bottom: 30px;
-	line-height: 34px;
-	color: var(--color-primary);
+	color: var(--color-text-secondary);
+	margin-bottom: 30px;
 }
 .preview__button {
-	display: block;
+	font-family: var(--body-font);
+	font-size: 20px;
+	font-weight: 600;
+	display: inline-block;
 	padding: 21px 50px;
 	text-transform: uppercase;
+	text-decoration: none;
 	cursor: pointer;
 	text-align: center;
 	border-radius: 25px;
 	color: var(--color-white);
-	background-color: var(--color-secondary);
+	background-color: var(--color-pink);
 	border: 1px solid var(--color-white);
-	font-size: var(--fonts-h4);
-	font-weight: 600;
-	z-index: 1;
+	transition: var(--transition-base);
 }
 .preview__button:hover {
 	background: var(--color-white);
-	border: 1px solid var(--color-secondary);
-	color: var(--color-primary);
+	border: 1px solid var(--color-pink);
+	color: var(--color-pink);
 }
 .arrange__wrapper {
 	display: flex;
@@ -81,16 +84,25 @@
 	justify-content: center;
 	text-transform: uppercase;
 	padding: 150px 0px;
-	font-size: var(--fonts-h1);
 	text-align: center;
 }
-.arrange__wrapper p {
-	color: var(--color-primary);
+.arrange__wrapper h2 {
+	font-family: var(--body-font);
+	font-size: 52px;
 	font-weight: 700;
+	color: var(--color-black);
+	margin: 0;
+	line-height: 130%;
 }
 .arrange__wrapper span {
-	color: var(--color-secondary);
-	font-weight: 700;
+	color: var(--color-pink);
+}
+.arrange__wrapper h2 span {
+	color: var(--color-pink);
+	margin-left: 10px;
+}
+.desktop-break {
+	display: block;
 }
 @media screen and (max-width: 1600px) {
 	.preview__bg__top {
@@ -118,17 +130,25 @@
 	.preview__container {
 		min-height: 650px;
 	}
+	.preview__title,
+	.arrange__wrapper h2 {
+		font-size: 42px;
+	}
+	.preview__subtitle {
+		font-size: 24px;
+	}
 	.preview__button {
-		padding: 18px 42px;
+		padding: 18px 40px;
 	}
 }
 @media screen and (max-width: 800px) {
 	.preview__container {
+		min-height: 500px;
 		background-image: url('landing-main-bgSmall.jpg');
-		align-items: flex-start;
-		justify-content: center;
+		align-items: center;
 	}
 	.preview__wrapper {
+		margin-right: 0;
 		align-items: center;
 		justify-content: center;
 	}
@@ -143,9 +163,6 @@
 		left: 0;
 		right: auto;
 	}
-	.preview__container {
-		min-height: 750px;
-	}
 	.preview__button {
 		padding: 18px 40px;
 	}
@@ -159,5 +176,51 @@
 	}
 	.preview__button {
 		padding: 17px 25px;
+	}
+	.preview__title {
+		font-size: 2rem;
+	}
+	.preview__subtitle {
+		font-size: 1.25rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	.preview__title,
+	.arrange__wrapper h2 {
+		font-size: 36px;
+	}
+	.preview__subtitle {
+		font-size: 20px;
+	}
+	.preview__button {
+		font-size: 18px;
+		padding: 18px 40px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.preview__title,
+	.arrange__wrapper h2 {
+		font-size: 28px;
+	}
+	.preview__subtitle {
+		font-size: 18px;
+	}
+	.preview__button {
+		font-size: 16px;
+		padding: 15px 30px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.arrange__wrapper h2 span {
+		display: block;
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+	.arrange__wrapper h2 {
+		display: flex;
+		flex-direction: column;
+	}
+	.desktop-break {
+		display: none;
 	}
 }

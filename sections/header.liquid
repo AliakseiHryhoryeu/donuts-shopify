@@ -1,1 +1,48 @@
-{% render 'header' %}
+{% render 'header',
+  logo: section.settings.logo,
+  logo_width: section.settings.logo_width,
+  show_contacts: section.settings.show_contacts,
+  phone_number: section.settings.phone_number
+%}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "default": 100,
+      "unit": "px",
+      "label": "Logo width"
+    },
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contacts",
+      "default": true,
+      "label": "Show contacts"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number"
+    }
+  ]
+}
+{% endschema %}

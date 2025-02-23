@@ -1,45 +1,50 @@
 .divider {
+	position: relative;
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+	background: var(--color-background);
+	border-top: 2px solid var(--color-pink);
+	border-bottom: 2px solid var(--color-pink);
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
 	align-items: center;
-	padding: 10px 0px;
-	border: 2px solid var(--color-secondary);
-	border-right: none;
-	border-left: none;
-	max-width: 100vw;
-	overflow-x: hidden;
+	justify-content: flex-start;
 }
+
+.divider__content {
+	display: inline-flex;
+	white-space: nowrap;
+	will-change: transform;
+	align-items: center;
+}
+
 .divider p {
 	white-space: nowrap;
-	padding: 0px 100px;
+	padding: 0px 30px;
+	font-family: var(--body-font);
 	font-weight: 900;
-	font-size: var(--fonts-big);
+	font-size: 64px;
+	line-height: 100px;
 	text-transform: uppercase;
 	color: transparent;
-	-webkit-text-stroke: 2px var(--color-secondary);
-	animation: marquee 5s linear infinite;
+	-webkit-text-stroke: 2px var(--color-pink);
 }
-@keyframes marquee {
-	0% {
-		transform: translate(0, 0);
-	}
-	100% {
-		transform: translate(-100%, 0);
-	}
-}
+
 @media screen and (max-width: 1200px) {
 	.divider p {
-		padding: 0px 50px;
+		padding: 0px 20px;
+		font-size: 48px;
 	}
 }
+
 @media screen and (max-width: 800px) {
 	.divider {
-		border: 1px solid var(--color-secondary);
+		height: 80px;
 	}
 	.divider p {
-		font-size: 40px;
-		padding: 0px 25px;
-		-webkit-text-stroke: 1px var(--color-secondary);
+		font-size: 32px;
+		line-height: 80px;
+		padding: 0px 15px;
+		-webkit-text-stroke: 2px var(--color-pink);
 	}
 }

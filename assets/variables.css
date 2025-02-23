@@ -1,73 +1,121 @@
+:root {
+	/* Colors */
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-text: #655d5d;
+	--color-pink: #ff69b4;
+	--color-pink-light: #ffc0cb;
+	--color-pink-dark: #db7093;
+	--color-background: #fff5f7;
+	--color-text-secondary: #666666;
+	--color-border: #e5e7eb;
+
+	/* Brand Colors */
+	--color-primary: #ec4899;
+	--color-primary-hover: var(--color-pink-light);
+	--color-secondary: var(--color-pink-dark);
+	--color-accent: var(--color-pink);
+
+	/* Typography */
+	--body-font: 'Urbanist', sans-serif;
+	--heading-font: 'Urbanist', sans-serif;
+
+	/* Font sizes */
+	--font-size-display: 48px;
+	--font-size-h1: 36px;
+	--font-size-h2: 28px;
+	--font-size-h3: 24px;
+	--font-size-h4: 20px;
+	--font-size-base: 16px;
+	--font-size-small: 14px;
+
+	/* Font weights */
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+
+	/* Spacing */
+	--space-1: 0.25rem;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 1.5rem;
+	--space-6: 24px;
+	--space-8: 32px;
+	--space-10: 4rem;
+
+	/* Layout */
+	--container-width: 1300px;
+	--header-height: 80px;
+	--section-spacing: var(--space-10);
+
+	/* Border radius */
+	--border-radius-sm: 4px;
+	--border-radius: 8px;
+	--border-radius-lg: 16px;
+	--border-radius-full: 9999px;
+
+	/* Shadows */
+	--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+	/* Z-index */
+	--z-below: -1;
+	--z-normal: 1;
+	--z-above: 10;
+	--z-header: 100;
+	--z-modal: 1000;
+
+	/* Transitions */
+	--transition-base: all 0.3s ease;
+	--transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container utilities */
 .containerMaxWidth {
 	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 var(--space-4);
 }
 
 .containerWrapper {
 	width: 100%;
-	max-width: 1300px;
-	padding: 0px 30px;
 	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-6);
 }
 
-:root {
-	/* Fonts */
-	--body-font: 'Urbanist', -apple-system, system-ui, sans-serif;
-	/* Colors */
-	--color-white: #ffffff;
-	--color-primary: #655d5d;
-	--color-primary-hover: #f3f6f9;
-	--color-grey: rgba(178, 174, 174, 1);
-	--color-secondary: #ff7297;
-	--color-secondary-hover: #ff8aa9;
-	/* End Dark Projects styles */
-	/* Fonts */
-	--fonts-big: 96px;
-	--fonts-h1: 72px;
-	--fonts-h2: 36px;
-	--fonts-h3: 28px;
-	--fonts-h4: 24px;
-	--fonts-h5: 18px;
-	/* Wrapper */
-	--wrapper_width: 1440px;
-}
+/* Responsive adjustments */
 @media screen and (max-width: 1280px) {
 	:root {
-		--fonts-big: 64px;
-		--fonts-h1: 52px;
-		--fonts-h2: 28px;
-		--fonts-h3: 24px;
-		--fonts-h4: 20px;
-		--fonts-h5: 16px;
+		--container-width: 1024px;
+		--font-size-display: 40px;
+		--font-size-h1: 32px;
+		--font-size-h2: 24px;
+		--section-spacing: var(--space-8);
 	}
 }
-@media screen and (max-width: 950px) {
+
+@media screen and (max-width: 768px) {
 	:root {
-		--fonts-h1: 40px;
-		--fonts-h2: 26px;
-		--fonts-h3: 28px;
-		--fonts-h4: 18px;
-		--fonts-h5: 16px;
+		--container-width: 100%;
+		--font-size-display: 36px;
+		--font-size-h1: 28px;
+		--font-size-h2: 20px;
+		--section-spacing: var(--space-6);
 	}
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 480px) {
 	:root {
-		--fonts-big: 40px;
-		--fonts-h1: 36px;
-		--fonts-h2: 24px;
-		--fonts-h3: 20px;
-		--fonts-h4: 16px;
-		--fonts-h5: 14px;
-	}
-}
-@media screen and (max-width: 1440px) {
-	:root {
-		--wrapper_width: 1180px;
+		--font-size-display: 32px;
+		--font-size-h1: 24px;
+		--font-size-h2: 18px;
+		--space-4: 0.75rem;
+		--space-6: 1.5rem;
 	}
 }
