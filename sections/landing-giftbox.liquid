@@ -1,33 +1,35 @@
 {{ 'landing-giftbox.css' | asset_url | stylesheet_tag }}
 
-<section class='giftboxPreview__container containerMaxWidth'>
-  <div class='giftboxPreview__wrapper containerWrapper'>
-    <div class=giftboxPreview__leftSection>
+<section class="giftboxPreview__container ">
+  <div class="giftboxPreview__wrapper containerMaxWidth containerWrapper">
+    <div class="giftboxPreview__leftSection">
       <div>
-        <div class=giftboxPreview__title>
-          Collect boxes <br/>
+        <div class="giftboxPreview__title">
+          Collect boxes <br>
           for your loved ones!
         </div>
-        <div class=giftboxPreview__description>
-          Choose 3, 6, 9 or 12 donuts, and we will pack them in a festive
-          box. You can also choose flowers, a postcard to give a treat to
-                                                                                your loved ones!
+        <div class="giftboxPreview__description">
+          Choose 3, 6, 9 or 12 donuts, and we will pack them in a festive box. You can also choose flowers, a postcard
+          to give a treat to your loved ones!
         </div>
       </div>
-      <div class=giftboxPreview__button>
-        {% comment %} onClick={() => {
-        router.push('/giftbox')
-        }} {% endcomment %}
+      <div class="giftboxPreview__button">
+        {% comment %}
+          onClick={() => {
+          router.push('/giftbox')
+          }}
+        {% endcomment %}
 
         Collect a box
       </div>
     </div>
-    <div class=giftboxPreview__rightSection>
+    <div class="giftboxPreview__rightSection">
       <img
-        src={{'landing-giftbox-gift-box.png' | asset_img_url }}
-        alt=''
-        width='auto'
-        height='auto' />
+        src="{{'landing-giftbox-gift-box.png' | asset_img_url }}"
+        alt=""
+        width="auto"
+        height="auto"
+      >
     </div>
   </div>
 </section>

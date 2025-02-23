@@ -1,1 +1,21 @@
-[]
+[
+	{
+		"name": "theme_info",
+		"theme_name": "Donuts Shop Theme",
+		"theme_version": "1.0.0",
+		"theme_author": "Your Name",
+		"theme_documentation_url": "https://github.com/your-username/theme-name",
+		"theme_support_url": "https://github.com/your-username/theme-name/issues"
+	},
+	{
+		"name": "Social media",
+		"settings": [
+			{
+				"type": "text",
+				"id": "social_instagram",
+				"label": "Instagram",
+				"info": "https://instagram.com/your-account"
+			}
+		]
+	}
+]
