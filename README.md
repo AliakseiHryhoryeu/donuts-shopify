@@ -1,5 +1,7 @@
 # Donuts Shopify Theme
 
+Hello in that repository i learn IDE Cursor with AI and Shopify :)
+
 Тема для Shopify магазина пончиков.
 
 ## Содержание
